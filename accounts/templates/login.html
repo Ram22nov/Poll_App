@@ -8,24 +8,44 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .card {
+        border-radius: 15px;
+      }
+      .btn-primary {
+        background-color: #28a745;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #218838;
+      }
+      .form-group label {
+        font-weight: bold;
+      }
+      h1 {
+        font-size: 2.5rem;
+        color: #28a745;
+      }
+    </style>
   </head>
   <body>
     <div class="container mt-5">
       <!-- Login form -->
       <form
-        class="col-6 mx-auto card p-3 shadow-lg"
+        class="col-md-6 mx-auto card p-4 shadow-lg"
         method="post"
         enctype="multipart/form-data"
       >
-        <h1 style="text-align: center">
-          <span style="color: green">Mysite</span>
-        </h1>
+        <h1 class="text-center">POLLS</h1>
 
         {% csrf_token %}
         <!-- CSRF token for security -->
 
         <!-- Login heading -->
-        <h3>Login</h3>
+        <h3 class="text-center">Login</h3>
         <hr />
 
         <!-- Display error/success messages -->
@@ -37,13 +57,12 @@
 
         <!-- Username input field -->
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
+          <label for="username">Username</label>
           <input
             type="text"
             class="form-control"
             name="username"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="username"
             placeholder="Enter username"
             required
           />
@@ -51,22 +70,24 @@
 
         <!-- Password input field -->
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="password">Password</label>
           <input
             type="password"
             name="password"
             class="form-control"
-            id="exampleInputPassword1"
+            id="password"
             placeholder="Password"
             required
           />
         </div>
 
         <!-- Link to registration page -->
-        <p>Don't have an account <a href="/auth/register/">Register</a></p>
+        <p class="text-center">
+          Don't have an account? <a href="/auth/register/">Register</a>
+        </p>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
       </form>
     </div>
   </body>
